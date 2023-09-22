@@ -26,9 +26,8 @@ int initialize_command(info_t *info)
 
 	if (child_pid == 0)
 	{
-	extern char **environ;
 		
-	if (execve("/bin", info->argv, environ) == -1)
+	if (execve(info->argv[0], info->argv, NULL)== -1)
 	{
 	perror("execve");
 	exit(EXIT_FAILURE);

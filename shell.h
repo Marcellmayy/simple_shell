@@ -83,28 +83,31 @@ typedef struct passinfo
 	char *part;
 
 	char *full_path;
+	char format[128];
+
 } info_t;
 
 /************FUNTIONS************/
 void joemac_print(char *string, int descriptor);
-int main(int argc, char **argv);
+int main(void);
 void print_prompt(void);
 char *read_line(void);
 char *split_command(char *line);
 void visualize_prompt(void);
 int initialize_command(info_t *info);
-void read_command_input(size_t size);
+void read_command_input(size_t size, char **command);
 char joemac_command_split(char *str, const char *delim);
-void initialise(char *format);
 /* environ_env.c */
-char **jm_env(info_t *);
-int joemac_unsetenv(info_t *, char *);
-int joemac_setenv(info_t *, char *, char *);
+char **jm_env(info_t *info);
+int joemac_unsetenv(const char *name);
+int joemac_setenv(const char *name, const char *value);
 char **list_to_strings(list_t *list);
 char *starts_with(const char *str, const char *prefix);
 int delete_node_at_index(list_t **head, unsigned int index);
 int add_node_end(list_t **head, char *str, int num);
+char jm_get_builtins(const char *name);
 
 /*global variable*/
+size_t size = 128;
 extern char **environ;
 #endif /*SHELL_H*/

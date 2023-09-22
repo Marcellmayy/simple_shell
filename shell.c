@@ -5,14 +5,17 @@
  */
 int main(void)
 {
-	char formt[128];
+	size_t size = 128;
+	char *command;
 
 	while (1)
 	{
-		visualize_prompt();
-		read_command_input(sizeof(formt));
-		initialize_command(formt);
-	}
+	visualize_prompt();
 
-	return (0);
+	read_command_input(size, &command);
+	
+	initialize_command(command); 
+	}
+  
+	return 0;
 }
