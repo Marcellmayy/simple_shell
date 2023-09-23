@@ -6,7 +6,7 @@
  * @size: size of string
  * return: 0
  */
-void read_command_input(size_t size, char **command)
+void read_command_input(size_t size)
 {
 	ssize_t read_command;
 	char message[BUFSIZE];

@@ -94,8 +94,8 @@ void print_prompt(void);
 char *read_line(void);
 char *split_command(char *line);
 void visualize_prompt(void);
-int initialize_command(info_t *info);
-void read_command_input(size_t size, char **command);
+int initialize_command(info_t *info, const char *command);
+void read_command_input(size_t size);
 char joemac_command_split(char *str, const char *delim);
 /* environ_env.c */
 char **jm_env(info_t *info);

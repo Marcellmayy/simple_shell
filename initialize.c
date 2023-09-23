@@ -6,7 +6,7 @@
  * Return: Status code of the executed command
 */
 
-int initialize_command(info_t *info)
+int initialize_command(info_t *info,const char *command)
 {
 	pid_t child_pid;
 	int status;
@@ -31,6 +31,13 @@ int initialize_command(info_t *info)
 	{
 	perror("execve");
 	exit(EXIT_FAILURE);
+
+	info->argv[0] = strdup(command);
+	if (info-> argv[0] == NULL)
+	{
+	perror("Failed to allocate memory for argv[0]";
+	exit(EXIT_FAILURE);
+	
 	}
 	}
 	else

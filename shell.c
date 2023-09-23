@@ -12,10 +12,12 @@ int main(void)
 	{
 	visualize_prompt();
 
-	read_command_input(size, &command);
+	read_command_input(size);
+
+	info->argv = command;
 	
-	initialize_command(command); 
+	initialize_command(info); 
 	}
   
-	return 0;
+	return (0);
 }
