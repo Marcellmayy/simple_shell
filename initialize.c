@@ -11,7 +11,7 @@ int initialize_command(void)
 	pid_t child_pid;
 	int status;
 	
-	char *argv[] = {"/user/bin/bash", "ls", NULL};
+	char *argv[] = {"/bin/ls", "-l", NULL};
 	{
 	perror("Error accessing command path");
 	return -1;
