@@ -31,6 +31,7 @@ int initialize_command(void)
 	{
 	perror("execve");
 	exit(EXIT_FAILURE);
+	
 	}
 	}
 	else

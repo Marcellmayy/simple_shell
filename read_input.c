@@ -6,6 +6,7 @@
  * @size: size of string
  * return: 0
  */
+
 char *read_command_input(void)
 {
 	ssize_t read_command;

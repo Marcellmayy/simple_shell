@@ -106,7 +106,6 @@ char *starts_with(const char *str, const char *prefix);
 int delete_node_at_index(list_t **head, unsigned int index);
 int add_node_end(list_t **head, char *str, int num);
 char jm_get_builtins(const char *name);
-
 /*global variable*/
 size_t size = 128;
 extern char **environ;
