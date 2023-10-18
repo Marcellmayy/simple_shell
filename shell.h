@@ -94,9 +94,9 @@ void print_prompt(void);
 char *read_line(void);
 char *split_command(char *line);
 void visualize_prompt(void);
-int initialize_command(info_t *info);
-void read_command_input(size_t size, char **command);
-char joemac_command_split(char *str, const char *delim);
+int initialize_command(void);
+char *read_command_input(void);
+char **joemac_command_split(char *line);
 /* environ_env.c */
 char **jm_env(info_t *info);
 int joemac_unsetenv(const char *name);
@@ -110,4 +110,5 @@ char jm_get_builtins(const char *name);
 /*global variable*/
 size_t size = 128;
 extern char **environ;
+size_t size;
 #endif /*SHELL_H*/

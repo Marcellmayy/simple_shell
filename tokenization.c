@@ -8,19 +8,29 @@
  */
 
 
-char joemac_command_split(char *str, const char *delim)
+char **joemac_command_split(char *line)
 {
-	char *part = str;
+	char *part = line;
 
-	while (part != NULL && *part != '\0')
-	{
-	if (strchr(part, *delim) != NULL)
-	{
-	*part = '\0';
-	part++;
-	return (*str);
+	char *delim = ";";
+
+	while (part != NULL)
+
+	{	
+
+		if (strchr(part, *delim) != NULL)
+
+	{	
+
+		*part = '\0';
+
+		part++;
+
+	}	
+
+		part++;
+
 	}
-	part++;
-	}
-	return '\0';
+
+	return 0;
 }

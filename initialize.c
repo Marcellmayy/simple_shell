@@ -6,12 +6,12 @@
  * Return: Status code of the executed command
 */
 
-int initialize_command(info_t *info)
+int initialize_command(void)
 {
 	pid_t child_pid;
 	int status;
 	
-	if (access(info->full_path, X_OK) == -1)
+	char *argv[] = {"/user/bin/bash", "ls", NULL};
 	{
 	perror("Error accessing command path");
 	return -1;
@@ -27,7 +27,7 @@ int initialize_command(info_t *info)
 	if (child_pid == 0)
 	{
 		
-	if (execve(info->argv[0], info->argv, NULL)== -1)
+	if (execve(argv[0], argv, NULL)== -1)
 	{
 	perror("execve");
 	exit(EXIT_FAILURE);
@@ -38,5 +38,5 @@ int initialize_command(info_t *info)
 	wait(&status);
 	}
   
-	return (status);
+	return 0;
 }

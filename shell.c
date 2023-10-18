@@ -5,17 +5,34 @@
  */
 int main(void)
 {
-	size_t size = 128;
-	char *command;
+
+	char *line;
+
+	char **tokens;
 
 	while (1)
-	{
-	visualize_prompt();
 
-	read_command_input(size, &command);
-	
-	initialize_command(command); 
+	{
+
+		visualize_prompt();
+
+		line = read_command_input();
+
+		tokens = joemac_command_split(line);
+
+	if (tokens[0] != NULL)
+
+	{	
+
+		initialize_command();
+
 	}
-  
-	return 0;
+
+		free(tokens);
+
+		free(line);
+
+	}
+
+		return 0;
 }

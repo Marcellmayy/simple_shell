@@ -6,10 +6,11 @@
  * @size: size of string
  * return: 0
  */
-void read_command_input(size_t size, char **command)
+char *read_command_input(void)
 {
 	ssize_t read_command;
 	char message[BUFSIZE];
+	char *line = NULL;
 
 	if (size > BUFSIZE) 
 	{
@@ -25,4 +26,5 @@ void read_command_input(size_t size, char **command)
 		exit(EXIT_FAILURE);
 	}
 	message[read_command - 1] = '\0';
+	return line;
 }
