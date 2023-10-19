@@ -9,7 +9,6 @@
 int joemac_unsetenv(const char *name)
 {
 	if (name == NULL) 
-	return -1;
-
-	return unsetenv(name);
+	return (-1);
+	return (name);
 }
