@@ -1,17 +1,21 @@
 #include "shell.h"
 
 /**
- * read_input - reads input
- * @format: string input
- * @size: size of string
- * return: 0
+ * read_command_input - reads input
+ * format - string input
+ * size - size of string
+ * return 0 if success
  */
 char *read_command_input(void)
 {
 	ssize_t read_command;
+
+
 	char message[BUFSIZE];
 	char *line = NULL;
-	if (size > BUFSIZE) 
+
+
+	if (size > BUFSIZE)
 	{
 	fprintf(stderr, "Input size exceeds buffer size\n");
 	exit(EXIT_FAILURE);
