@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
  *main - entry point
- * 
+ *
  */
 int main(void)
 {
@@ -15,7 +15,7 @@ int main(void)
 		line = read_command_input();
 		tokens = joemac_command_split(line);
 	if (tokens[0] != NULL)
-	{	
+	{
 		initialize_command();
 
 	}
