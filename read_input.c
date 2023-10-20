@@ -4,7 +4,7 @@
  * read_command_input - reads input
  * format - string input
  * size - size of string
- * return 0 if success
+ * return: 0 if success
  */
 char *read_command_input(void)
 {
