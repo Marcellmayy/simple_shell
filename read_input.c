@@ -1,10 +1,13 @@
 #include "shell.h"
 
 /**
- * read_command_input - reads input
- * format - string input
- * size - size of string
- * return 0 if success
+ * read_command_input - reads input from standard input.
+ * @void: No parameters.
+ * This function reads a line of input from the standard input (stdin) and
+ * returns it as a string.
+ *
+ * Return: A dynamically allocated string containing the user's input, or NULL
+ * if an error occurs.
  */
 char *read_command_input(void)
 {
