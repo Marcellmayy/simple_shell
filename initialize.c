@@ -6,6 +6,7 @@
  * Return: Status code of the executed command
 */
 int initialize_command(void)
+
 {
 	pid_t child_pid;
 	int status;

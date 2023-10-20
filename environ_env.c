@@ -5,7 +5,6 @@
  * @info: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  * Return: Array of strings (char**) containing the environment variables
- * Return: Always 0
  */
 char **jm_env(info_t *info)
 {
