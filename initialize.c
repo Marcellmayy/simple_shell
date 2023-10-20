@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * initialize_command - executes a command using execve 
- * @info: The info_t structure
+ * initialize_command - executes a command using execve
  * Return: Status code of the executed command
-*/
+ */
 int initialize_command(void)
 
 {

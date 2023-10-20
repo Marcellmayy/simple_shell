@@ -1,17 +1,19 @@
 #include "shell.h"
 
 /**
- *unsetenv - remove an environment variable
- *@format: string input
- *return: always 0 if sucess, -1 on failure
+ * joemac_unsetenv - Remove an environment variable.
+ * @name: The name of the environment variable to be removed.
+ *
+ * This function removes specified environment variable with the given name.
+ *
+ * Return: 0 on success, -1 on failure.
  */
-
 int joemac_unsetenv(const char *name)
 {
-	if (name == NULL) 
+	if (name == NULL)
 	return (-1);
 
-	if (unsetenv(name)== 0)
+	if (unsetenv(name) == 0)
 	{
 		return (0);
 	}

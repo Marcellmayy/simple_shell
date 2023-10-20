@@ -1,11 +1,15 @@
 #include "shell.h"
 
-/*
- * cd: Handle argument and path argument cases
- * chdir: change working directory
- * pwd: print working directory
- * Return: error if chdir fails
-*/
+/**
+ * cd - Change the current working directory.
+ * jm_builtins_env - Check if a built-in command is "env".
+ * @name: The name of the built-in command.
+ *
+ * This function checks if a given command name is "env," which is a built-in
+ * command to display the current environment.
+ *
+ * Return: 1 if the command is "env,"0 otherwise.
+ */
 
 char *jm_builtins_env(const char *name);
 
