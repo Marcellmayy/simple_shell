@@ -23,11 +23,11 @@
 #define BUFSIZE 1024
 
 /* if using system getline() */
-#define USE_GETLINE 
+#define USE_GETLINE
 #define USE_STRTOK
 
 /**
- * struct listr - singly linked list
+ * struct listsr - This struct represents a singly linked list
  * @num: the number field
  * @str: a string
  * @next: points to the next node
@@ -40,32 +40,34 @@ typedef struct listsr
 } list_t;
 
 /**
- * struct info - contains psuedo-arguement to pass into a function, allowing uniform prototype for function pointer struct
- * @arg: a strong generated from getline containing arguement
+ * struct passinfo - A struct for arguments to pass to a function
+ * @arg: a string generated from getline containing arguments
  * @argv: an array of strings generated from arg
- * @path: a string path for the current command 
- * @argc: the arguement count
+ * @path: a string path for the current command
+ * @argc: the argument count
  * @line_count: the error count
- * @err_num: the error code for exit() 
- * @linecount_flag: if on count this line of input
+ * @err_num: the error code for exit()
+ * @linecount_flag: if on, count this line of input
  * @fname: the program filename
  * @env: linked list local copy of environ
- * @environ: custom modified copy of from LL env
+ * @environ: custom modified copy from LL env
  * @alias: the alias node
- * @env_changed: on if environ was changed 
- * @status: the return status of the last exce'd comment
+ * @env_changed: on if environ was changed
+ * @status: the return status of the last exec'd command
  * @cmd_buff: address of pointer to cmd_buff, on if chaining
  * @cmd_buff_type: cmd_type ||, &&, ;
  * @readfd: the fd from which to read line input
+ * @token: The token to be used in the tokenization
+ * @part: The part of the information to be put out
+ * @full_path: The full path of the environment
+ * @format: The format of the variable to be
  */
-
-
 typedef struct passinfo
 {
 	char *arg;
 	char **argv;
 	char *path;
-	int argc; 
+	int argc;
 	unsigned int line_count;
 	int err_num;
 	int linecount_flag;
@@ -86,6 +88,7 @@ typedef struct passinfo
 	char format[128];
 
 } info_t;
+
 
 /************FUNTIONS************/
 void joemac_print(char *string, int descriptor);
