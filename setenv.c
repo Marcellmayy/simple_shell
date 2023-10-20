@@ -8,8 +8,8 @@
 
 int joemac_setenv(const char *name, const char *value) 
 {
-	if (name == NULL || value == NULL) 
-	return (-1);
-	return (setenv(name, value) == 1);
+  if (name == NULL || value == NULL) return -1;
+
+  return setenv(name, value, 1);
 }
 

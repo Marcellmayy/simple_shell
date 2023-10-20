@@ -110,4 +110,5 @@ char jm_get_builtins(const char *name);
 size_t size = 128;
 extern char **environ;
 size_t size;
+extern size_t size;
 #endif /*SHELL_H*/
